@@ -34,9 +34,16 @@ struct PowerView: View {
                 HStack(alignment: .center) {
                     HStack(alignment: .top) {
                         
+                        if power.base >= 0 {
+                            // No brackets when base is zero or positive
                         Text("\(power.base.formatted())")
                             .font(.system(size: 96))
-                        
+                        } else {
+                            // Show brackets when base is negative
+                            Text("(\(power.base.formatted()))")
+                                .font(.system(size: 96))
+                        }
+                            
                         Text("\(power.exponent)")
                             .font(.system(size: 44))
                     }
