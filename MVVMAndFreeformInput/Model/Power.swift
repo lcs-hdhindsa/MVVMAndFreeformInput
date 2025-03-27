@@ -46,7 +46,7 @@ struct Power {
             
             // Repeatedly multiply the base by itself
             // as many more times as needed
-            for _ in 1...exponent {
+            for _ in 1...abs(exponent) {
                 solution *= base
             }
             
